@@ -36,4 +36,8 @@ cart.addEventListener("click", function (e) {
     updateInputValue(clickedElement, "substraction");
     sum();
   }
+  if(clickedElement.classList.contains('remove-item')){
+    clickedElement.closest('.cart-item').remove();
+    sum()
+ }
 });
