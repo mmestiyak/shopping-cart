@@ -1,6 +1,4 @@
 const cart = document.querySelector(".cart");
-const subTotalText = document.querySelector(".sub-total");
-const tax = document.querySelector(".tax");
 const total = document.querySelector(".total");
 function sum() {
   let subTotalSum = 0;
@@ -8,11 +6,9 @@ function sum() {
   cartItems.forEach((item) => {
     subTotalSum += parseInt(item.innerText);
   });
-  // subTotalText.innerText = subTotalSum;
   total.innerText = subTotalSum;
 }
 
-let totalPrice = 0;
 function updateInputValue(element, sum) {
   let input = element.closest("div").querySelector("input");
   let inputValue = Number(input.value);
@@ -35,11 +31,9 @@ cart.addEventListener("click", function (e) {
   if (clickedElement.classList.contains("fa-plus")) {
     updateInputValue(clickedElement, "addition");
     sum();
-
   }
   if (clickedElement.classList.contains("fa-minus")) {
     updateInputValue(clickedElement, "substraction");
     sum();
-
   }
 });
